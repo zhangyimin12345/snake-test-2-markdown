@@ -283,12 +283,65 @@
         <div class="preview-box" id="preview"></div>
         <h4>希望使用更高级的编辑器？试试<a href="https://wbwdxh.github.io/code.html">这个</a>！</h4>
         <br>
-        <script src="https://giscus.app/client.js" data-repo="zhangyimin12345/snake-test-2-markdown"
+        <!-- <script src="https://giscus.app/client.js" data-repo="zhangyimin12345/snake-test-2-markdown"
         data-repo-id="R_kgDOOUxsrw" data-category="Announcements" data-category-id="DIC_kwDOOUxsr84CpE_I"
         data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
         data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"
         async>
-        </script>
+        </script> -->
+        <main id="markdown-chat">
+            <span style="display: inline-flex; flex-direction: row; flex-wrap: nowrap;
+                align-content: flex-start; justify-content: flex-start; margin: 0; padding: 0;
+                align-items: center; background-color: #F6F8FA; box-sizing: border-box;
+                border-radius: .375rem; border-color: #d0d7de; border: 0 solid !important;">
+                <button id="utteranc-btn" onclick="showchatbox(1)" class="btn1">
+                    utteranc
+                </button>
+                <button id="giscus-btn" onclick="showchatbox(2)" class="btn1 clicked">
+                    giscus
+                </button>
+                <script>
+                    function showchatbox(x) {
+                        if (x == 2) {
+                            document.getElementById("comments-style").innerHTML =
+                                `#comments-1 {
+                                    display: none;
+                                }
+                                #comments-2 {
+                                    display: block;
+                                }`;
+                            document.getElementById("giscus-btn").classList.add("clicked");
+                            document.getElementById("utteranc-btn").classList.add("clicked");
+                            document.getElementById("utteranc-btn").classList.remove("clicked");
+                        }
+                        else {
+                            document.getElementById("comments-style").innerHTML =
+                                `#comments-2 {
+                                    display: none;
+                                }
+                                #comments-1 {
+                                    display: block;
+                                }`;
+                            document.getElementById("utteranc-btn").classList.add("clicked");
+                            document.getElementById("giscus-btn").classList.add("clicked");
+                            document.getElementById("giscus-btn").classList.remove("clicked");
+                        }
+                    }
+                </script>
+            </span>
+            <div id="comments-1">
+                <script src="https://utteranc.es/client.js" repo="wbwdxh/wbwdxh.github.io" issue-term="url"
+                    label="Utterances" theme="github-light" crossorigin="anonymous" async>
+                    </script>
+            </div>
+            <div id="comments-2">
+                <script src="https://giscus.app/client.js" data-repo="wbwdxh/wbwdxh.github.io" data-repo-id="R_kgDONXOTxQ"
+                    data-category="Announcements" data-category-id="DIC_kwDONXOTxc4CnWAd" data-mapping="url" data-strict="1"
+                    data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light"
+                    data-lang="zh-CN" crossorigin="anonymous" async>
+                    </script>
+            </div>
+        </main>
     </div>
 
     <button class="theme-toggle" id="theme-toggle">
